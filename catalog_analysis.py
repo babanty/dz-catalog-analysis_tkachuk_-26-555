@@ -111,3 +111,24 @@ def duration_in_hours(minutes):
     remaining_minutes = minutes % 60
 
     return f"{hours}ч {remaining_minutes}м"
+
+
+def rating_tier(rating):
+    if rating >= 9:
+        result = "шедевр"
+    elif rating >= 7:
+        result = "хорошо"
+    else:
+        result = "средне" if rating >= 5 else "слабо"
+
+    return result
+
+
+def decade_label(year):
+    match year:
+        case _ if year > 2020:
+            return "новые"
+        case _ if year >= 2015:
+            return "недавние"
+        case _:
+            return "старые"
